@@ -3,25 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Website</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Matthew Shiley - Engineering and Innovation</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <!-- Header Section -->
-    <div class="header">
-        <h1>Hi, I'm [Your Name]!</h1>
-        <p>Engineering student with a passion for signal processing, culture, and innovation.</p>
-    </div>
+    <header style="position: relative;">
+        <div class="container">
+            <h1>Welcome! I'm Matthew Shiley</h1>
+            <p>Engineering student at Swarthmore College, passionate about leveraging computer science and numerical methods for innovation.</p>
+        </div>
+    </header>
 
     <!-- Navigation Bar -->
-    <div class="nav">
-        <a href="projects.html">Projects</a>
-        <a href="photography.html">Photography</a>
-        <a href="resume.html">Resume</a>
-        <a href="classwork.html">Classwork</a>
-        <a href="contact.html">Contact</a>
-    </div>
+    <nav style="position: sticky; top: 0;">
+        <ul>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container" style="display: flex; align-items: center; gap: 2rem;">
+            <img src="assets/headshot.jpg" alt="Matthew Shiley" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 3px solid #2196F3; flex-shrink: 0;">
+            <div>
+                <h2>About Me</h2>
+                <p>I'm an engineering student at Swarthmore College, dedicated to applying computer science and engineering principles to create impactful solutions. My experiences span from developing imaging systems for biological research to designing robotic prosthetics.</p>
+                <p>Fluent in Python and proficient in Mandarin, I enjoy tackling challenges that blend technology, culture, and innovation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <ul>
+                <li>
+                    <strong>Swarthmore College, Swarthmore, PA (Expected 2026)</strong>
+                    <ul>
+                        <li>BS in Engineering, GPA: 3.98</li>
+                        <li>Relevant coursework: Thermodynamics, Numerical Methods, Data Structures</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Oregon Episcopal School, Portland, OR (Graduated 2022)</strong>
+                    <ul>
+                        <li>GPA: 3.99</li>
+                        <li>Relevant coursework: Machine Learning, Algorithms, AP Statistics</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Matthew Shiley | Portland, OR | mshiley1@swarthmore.edu</p>
+        </div>
+    </footer>
 
 </body>
 </html>
