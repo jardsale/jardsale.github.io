@@ -6,6 +6,123 @@
     <title>Matthew Shiley - Engineering Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 1rem;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 0;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: block;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 2rem;
+                cursor: pointer;
+                padding: 1rem;
+                position: absolute;
+                right: 1rem;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            #about .container {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            #about img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .education-columns {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                min-height: 4rem;
+                position: relative;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .nav-toggle {
+                display: none;
+            }
+        }
+
+        /* Education section styles */
+        .education-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .education-column h3 {
+            color: #000;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #000;
+            padding-bottom: 0.5rem;
+        }
+
+        .education-column .location {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-column .degree {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-column .date {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-column .gpa {
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 1rem;
+        }
+
+        .education-column .coursework {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-column ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+
+        .education-column ul li {
+            color: #333;
+            margin-bottom: 0.25rem;
+        }
+    </style>
 </head>
 <body>
 
@@ -19,12 +136,13 @@
 
     <!-- Navigation Bar -->
     <nav style="position: sticky; width: 100%; z-index: 999; top: 0; margin-top: -1px;">
+        <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
         <ul>
             <li><a href="index.html" style="color: #b1b1b1; pointer-events: none;">Home</a></li>
-            <li><a href="sections/projects.html">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
             <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="sections/projects.html">Projects</a></li>
+            <li><a href="sections/experience.html">Experience</a></li>
+            <li><a href="sections/contact.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -34,8 +152,9 @@
             <img src="assets/headshot.jpg" alt="Matthew Shiley" style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
             <div>
                 <h2>About Me</h2>
-                <p>I am an Engineering student at Swarthmore College with a strong foundation in computer science and numerical methods. My academic journey is driven by a passion for solving complex problems and developing innovative solutions.</p>
-                <p>Through my coursework and projects, I've developed expertise in thermodynamics, data structures, and computational analysis. I am constantly seeking opportunities to apply these skills to real-world challenges.</p>
+                <p>I am an Engineering student at Swarthmore College interested in mechanical engineering and product development. I have extensive experience in computer science, CAD and numerical methods.</p>
+                <p>In addition to engineering, I have studied Mandarin Chinese for nearly 10 years and am highly proficient in the language.</p>
+                <p>On this website, you can find my personal projects and experience. I am also a hobbyist photographer, and some of my works are featured here as well.</p>
             </div>
         </div>
     </section>
@@ -44,32 +163,34 @@
     <section id="education">
         <div class="container">
             <h2>Education</h2>
-            <div class="education-card">
-                <h3>Swarthmore College</h3>
-                <p class="location">Swarthmore, Pennsylvania</p>
-                <p class="degree">Bachelor of Science in Engineering</p>
-                <p class="date">Expected Graduation: May 2026</p>
-                <p class="gpa">GPA: 3.98/4.00</p>
-                <p class="coursework">Key Coursework:</p>
-                <ul>
-                    <li>Advanced Thermodynamics</li>
-                    <li>Numerical Methods and Computational Analysis</li>
-                    <li>Data Structures and Algorithms</li>
-                </ul>
-            </div>
+            <div class="education-columns">
+                <div class="education-column">
+                    <h3>Swarthmore College</h3>
+                    <p class="location">Swarthmore, Pennsylvania</p>
+                    <p class="degree">Bachelor of Science in Engineering</p>
+                    <p class="date">Expected Graduation: May 2026</p>
+                    <p class="gpa">GPA: 3.98/4.00</p>
+                    <p class="coursework">Key Coursework:</p>
+                    <ul>
+                        <li>Advanced Thermodynamics</li>
+                        <li>Numerical Methods and Computational Analysis</li>
+                        <li>Data Structures and Algorithms</li>
+                    </ul>
+                </div>
 
-            <div class="education-card">
-                <h3>Oregon Episcopal School</h3>
-                <p class="location">Portland, Oregon</p>
-                <p class="degree">High School Diploma</p>
-                <p class="date">Graduated: June 2022</p>
-                <p class="gpa">GPA: 3.99/4.00</p>
-                <p class="coursework">Notable Coursework:</p>
-                <ul>
-                    <li>Advanced Machine Learning</li>
-                    <li>Algorithm Design and Analysis</li>
-                    <li>AP Statistics</li>
-                </ul>
+                <div class="education-column">
+                    <h3>Oregon Episcopal School</h3>
+                    <p class="location">Portland, Oregon</p>
+                    <p class="degree">High School Diploma</p>
+                    <p class="date">Graduated: June 2022</p>
+                    <p class="gpa">GPA: 3.99/4.00</p>
+                    <p class="coursework">Notable Coursework:</p>
+                    <ul>
+                        <li>Machine Learning</li>
+                        <li>Data Structures and Algorithms</li>
+                        <li>AP Statistics</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -94,6 +215,14 @@
                 header.style.transform = 'translateY(0)';
             }
             lastScrollY = window.scrollY;
+        });
+
+        // Mobile navigation toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('nav ul');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
         });
     </script>
 
