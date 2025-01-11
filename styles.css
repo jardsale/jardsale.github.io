@@ -6,7 +6,123 @@
     font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
     scroll-behavior: smooth;
 }
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 1rem;
+    }
+    
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 2rem;
+    }
 
+    nav ul.show {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 1rem;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    #about .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    #about img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .education-columns {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+    }
+
+    nav {
+        min-height: 4rem;
+        position: relative;
+    }
+}
+
+@media (min-width: 769px) {
+    .nav-toggle {
+        display: none;
+    }
+}
+
+/* Education section styles */
+.education-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.education-column h3 {
+    color: #000;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #000;
+    padding-bottom: 0.5rem;
+}
+
+.education-column .location {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.education-column .degree {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.education-column .date {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.education-column .gpa {
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.education-column .coursework {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.education-column ul {
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+
+.education-column ul li {
+    color: #333;
+    margin-bottom: 0.25rem;
+}
 body {
     background-color: #ffffff;
     color: #000000;
@@ -63,6 +179,7 @@ nav ul {
     justify-content: center;
     list-style: none;
     gap: 2rem;
+    padding: 0 2rem;
 }
 
 nav ul li {

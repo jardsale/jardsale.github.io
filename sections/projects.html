@@ -6,6 +6,23 @@
     <title>Projects - Matthew Shiley</title>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        .nav-collapse {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .nav-collapse.show {
+            max-height: 300px;
+        }
+
+        @media (min-width: 769px) {
+            .nav-collapse {
+                max-height: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -18,13 +35,16 @@
 
     <!-- Navigation Bar -->
     <nav style="position: sticky; width: 100%; z-index: 999; top: 0; margin-top: -1px;">
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../index.html#education">Education</a></li>
-            <li><a href="projects.html" style="color: #b1b1b1; pointer-events: none;">Projects</a></li>
-            <li><a href="experience.html">Experience</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <div class="nav-collapse">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="projects.html" style="color: #b1b1b1; pointer-events: none;">Projects</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Projects Section -->
@@ -40,5 +60,17 @@
             <p>&copy; 2024 Matthew Shiley | Swarthmore, PA | <a href="mailto:mshiley1@swarthmore.edu">mshiley1@swarthmore.edu</a></p>
         </div>
     </footer>
+
+    <script>
+        // Mobile navigation toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navCollapse = document.querySelector('.nav-collapse');
+
+        navToggle.addEventListener('click', () => {
+            navCollapse.classList.toggle('show');
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', !isExpanded);
+        });
+    </script>
 </body>
 </html>

@@ -7,42 +7,20 @@
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
     <style>
-        .experience-card {
-            background: #fff;
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        .nav-collapse {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .nav-collapse.show {
+            max-height: 300px;
         }
 
-        .experience-title {
-            font-size: 1.3rem;
-            color: #000;
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-location {
-            color: #666;
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        .experience-details {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .experience-details li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .experience-details li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #666;
+        @media (min-width: 769px) {
+            .nav-collapse {
+                max-height: none;
+            }
         }
     </style>
 </head>
@@ -57,13 +35,16 @@
 
     <!-- Navigation Bar -->
     <nav style="position: sticky; width: 100%; z-index: 999; top: 0; margin-top: -1px;">
-        <ul>
-            <li><a href="../index.html">Home</a></li>   
-            <li><a href="../index.html#education">Education</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="experience.html" style="color: #b1b1b1; pointer-events: none;">Experience</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <div class="nav-collapse">
+            <ul>
+                <li><a href="../index.html">Home</a></li>   
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="experience.html" style="color: #b1b1b1; pointer-events: none;">Experience</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Experience Section -->
@@ -134,6 +115,18 @@
             <p>&copy; 2024 Matthew Shiley | Swarthmore, PA | <a href="mailto:mshiley1@swarthmore.edu">mshiley1@swarthmore.edu</a></p>
         </div>
     </footer>
+
+    <script>
+        // Mobile navigation toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navCollapse = document.querySelector('.nav-collapse');
+
+        navToggle.addEventListener('click', () => {
+            navCollapse.classList.toggle('show');
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', !isExpanded);
+        });
+    </script>
 
 </body>
 </html>
