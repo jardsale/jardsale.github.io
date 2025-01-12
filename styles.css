@@ -9,8 +9,8 @@
 /* Mobile Styles */
 @media (max-width: 768px) {
     .container {
-        width: 95%;
-        padding: 1rem;
+        width: 100%;
+        padding: 0;
     }
     
     nav ul {
@@ -44,7 +44,7 @@
 
     #about .container {
         flex-direction: column;
-        text-align: center;
+        text-align: left;
         gap: 2rem;
     }
 
@@ -62,11 +62,20 @@
         min-height: 4rem;
         position: relative;
     }
+
+    .project-card, .experience-card {
+        border-radius: 0;
+        margin: 0;
+    }
 }
 
 @media (min-width: 769px) {
     .nav-toggle {
         display: none;
+    }
+
+    .project-card, .experience-card {
+        margin: 1rem 2rem;
     }
 }
 
@@ -123,6 +132,62 @@
     color: #333;
     margin-bottom: 0.25rem;
 }
+
+/* Experience section styles */
+.experience-card, .project-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.experience-title, .project-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c2c2c;
+    margin-bottom: 0.5rem;
+}
+
+.experience-location, .project-date {
+    color: #757575;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.experience-details, .project-details {
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+
+.experience-details li, .project-details li {
+    color: #4a4a4a;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.project-links {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.project-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #333;
+}
+
 body {
     background-color: #ffffff;
     color: #000000;
@@ -138,7 +203,7 @@ p + p {
     width: 92%;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 /* Header */

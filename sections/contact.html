@@ -95,7 +95,7 @@
     <!-- Contact Form Section -->
     <section class="contact-form">
         <div class="container">
-            <form action="mailto:mshiley1@swarthmore.edu" method="post" enctype="text/plain">
+            <form id="contactForm" onsubmit="handleSubmit(event)">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
@@ -118,6 +118,20 @@
 
                 <button type="submit">Send Message</button>
             </form>
+            <script>
+                function handleSubmit(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value;
+                    
+                    const mailtoLink = `mailto:mshiley1@swarthmore.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+                    
+                    window.location.href = mailtoLink;
+                }
+            </script>
         </div>
     </section>
 
